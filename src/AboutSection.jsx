@@ -1,5 +1,5 @@
 import React from "react";
-import aboutImage from "./assets/about.jpg"; // Replace with your actual image path
+import aboutImage from "./assets/about.png"; // Replace with your actual image path
 import { ArrowUpRight } from "lucide-react";
 
 const AboutSection = () => {
@@ -7,9 +7,11 @@ const AboutSection = () => {
     <section id="about" className="py-20 text-gray-300">
       <div className="max-w-7xl mx-auto px-4">
         {/* Title */}
-        <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-6 relative inline-block after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:h-1 after:w-24 after:bg-yellow-500 after:rounded-full">
-          About Fama Barbershop
-        </h2>
+        <div className="flex justify-center mb-6">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white text-center relative inline-block after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:h-1 after:w-24 after:bg-yellow-500 after:rounded-full">
+            About Fama Barbershop
+          </h2>
+        </div>
 
         {/* Intro paragraph */}
         <p className="text-center max-w-3xl mx-auto mb-12 text-gray-400 text-lg">

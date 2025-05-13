@@ -1,11 +1,13 @@
 import { Description } from "@headlessui/react";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
-
+import barber1 from './images/barber1.jpg';
+import barber2 from './images/barber2.jpg';
+import barber3 from './images/barber3.jpg';
 const barbers = [
   {
     name: "Jason Rodriguez",
     title: "Owner & Master Barber",
-    image: "/images/barber1.jpg",
+    image: barber1,
     Description: "With over 15 years of experience, Jason brings precision, creativity, and a passion for grooming. He's the go-to expert for classic cuts, fades, and beard styling. His reputation is built on trust and consistent excellence.",
     social: {
       fb: "#",
@@ -16,7 +18,7 @@ const barbers = [
   {
     name: "Marcus Williams",
     title: "Senior Barber",
-    image: "/images/barber2.jpg",
+    image: barber2,
     Description: "Known for his detailed craftsmanship and modern styling techniques, Marcus has been in the industry for 10 years. He specializes in trendy looks, kid-friendly cuts, and sharp lines that define personal style.",
     social: {
       fb: "#",
@@ -27,7 +29,7 @@ const barbers = [
   {
     name: "Terrence Jackson",
     title: "Barber & Stylist",
-    image: "/images/barber3.jpg",
+    image: barber3,
     Description: "Terrence merges style and skill with his 8+ years of experience. From casual trims to intricate hair designs, he ensures every client leaves with confidence and a fresh, clean look.",
     social: {
       fb: "#",

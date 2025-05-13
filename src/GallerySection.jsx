@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { X } from "lucide-react";
+import gallery1 from './images/gallery1.png';
+import gallery2 from './images/gallery2.png';
+import gallery3 from './images/gallery3.png';
 
-const images = [
-  "/images/gallery1.jpg",
-  "/images/gallery2.jpg",
-  "/images/gallery3.jpg",
-];
+const images = [gallery1,gallery2,gallery3,];
 
 export default function GallerySection() {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -28,7 +27,7 @@ export default function GallerySection() {
             key={idx}
             src={img}
             alt={`gallery-${idx}`}
-            className="rounded-xl cursor-pointer hover:ring-4 hover:ring-yellow-500 transition"
+            className="w-full h-64 object-cover rounded-xl cursor-pointer hover:ring-4 hover:ring-yellow-500 transition"
             onClick={() => setSelectedImage(img)}
           />
         ))}

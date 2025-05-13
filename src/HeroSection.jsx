@@ -1,6 +1,6 @@
 import React from 'react';
 import { MapPin, Phone } from 'lucide-react';
-
+import imgfront from "./assets/imgfront.jpg";
 const HeroSection = () => {
   return (
     <section className="bg-gradient-to-r from-black to-gray-900 text-white py-12">
@@ -45,7 +45,7 @@ const HeroSection = () => {
         {/* Right Image Content */}
         <div className="md:w-1/2 mt-10 md:mt-0">
           <img
-            src="/images/barbershop-team.jpg" // Replace with your image path
+            src={imgfront} // Replace with your image path
             alt="Fama Barber Shop Team"
             className="rounded-xl shadow-lg w-full"
           />
