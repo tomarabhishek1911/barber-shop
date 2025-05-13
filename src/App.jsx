@@ -10,7 +10,7 @@ import GallerySection from './GallerySection';
 import BarbersSection from './BarbersSection';
 import LocationSection from './LocationSection';
 import FAQSection from './FAQSection';
-import ContactForm from './Form';
+import Contact from './Contact';
 import Adver from './Adver';
 import Footer from './Footer';
 function App() {
@@ -28,7 +28,7 @@ function App() {
         <BarbersSection/>
         <LocationSection/>
         <FAQSection/>
-        <ContactForm/>
+        <Contact/>
         <Adver/>
         <Footer/>
       </div>

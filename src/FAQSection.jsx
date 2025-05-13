@@ -1,27 +1,31 @@
-// src/components/FAQSection.js
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { faqData } from './faqData'; // Your FAQ data
 import CategoryTabs from './CategoryTabs';
 import QuestionItem from './QuestionItem';
-import { MagnifyingGlassIcon } from '@heroicons/react/24/outline'; // Example icon
+import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
 
 const FAQSection = () => {
   const [activeCategory, setActiveCategory] = useState(faqData[0]?.category || 'All Questions');
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredQuestions, setFilteredQuestions] = useState([]);
 
-  const allQuestions = faqData.reduce((acc, category) => {
-    category.questions.forEach(q => acc.push({ ...q, category: category.category }));
-    return acc;
+  const allQuestions = useMemo(() => {
+    return faqData.reduce((acc, category) => {
+      category.questions.forEach(q => acc.push({ ...q, category: category.category }));
+      return acc;
+    }, []);
   }, []);
 
   useEffect(() => {
     let currentQuestions = [];
+
     if (activeCategory === 'All Questions') {
       currentQuestions = allQuestions;
     } else {
       const categoryData = faqData.find(cat => cat.category === activeCategory);
-      currentQuestions = categoryData ? categoryData.questions.map(q => ({ ...q, category: categoryData.category })) : [];
+      currentQuestions = categoryData
+        ? categoryData.questions.map(q => ({ ...q, category: categoryData.category }))
+        : [];
     }
 
     if (searchTerm) {
@@ -30,8 +34,9 @@ const FAQSection = () => {
         item.answer.toLowerCase().includes(searchTerm.toLowerCase())
       );
     }
+
     setFilteredQuestions(currentQuestions);
-  }, [activeCategory, searchTerm, allQuestions]); // Added allQuestions to dependency array
+  }, [activeCategory, searchTerm, allQuestions]);
 
   const categories = ['All Questions', ...faqData.map(cat => cat.category)];
 
@@ -71,16 +76,16 @@ const FAQSection = () => {
           )}
         </div>
       </div>
-      {/* Scroll to top button - an example, you can style it better */}
+
       <button
-         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-         className="fixed bottom-8 right-8 bg-yellow-400 text-gray-900 p-3 rounded-full shadow-lg hover:bg-yellow-500 transition-colors focus:outline-none"
-         aria-label="Scroll to top"
-       >
-         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-           <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
-         </svg>
-       </button>
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        className="fixed bottom-8 right-8 bg-yellow-400 text-gray-900 p-3 rounded-full shadow-lg hover:bg-yellow-500 transition-colors focus:outline-none"
+        aria-label="Scroll to top"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+        </svg>
+      </button>
     </div>
   );
 };

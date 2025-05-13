@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ContactForm() {
   return (
-    <div className="min-h-screen bg-[#1b1b1b] flex items-center justify-center p-6">
+    <div id="contact" className="min-h-screen bg-[#1b1b1b] flex items-center justify-center p-6">
       <div className="max-w-6xl w-full grid grid-cols-1 md:grid-cols-3 gap-10 text-gray-400">
         {/* Left info panel */}
         <div className="space-y-10 bg-[#222222] p-8 rounded-lg shadow-lg">

@@ -11,7 +11,7 @@ export default function GallerySection() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <section className="bg-[#111] py-16 px-4 text-white text-center">
+    <section id="gallery" className="bg-[#111] py-16 px-4 text-white text-center">
       <h4 className="text-yellow-500 text-sm font-semibold">Our Work & Shop</h4>
       <h2 className="text-4xl font-bold mt-2">
         Our <span className="text-white">Barbershop Gallery</span>
